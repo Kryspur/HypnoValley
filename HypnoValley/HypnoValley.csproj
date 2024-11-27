@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+      <TargetFramework>net6.0</TargetFramework>
+	  <CheckEolTargetFramework>false</CheckEolTargetFramework>
+	  <GamePath>Z:\SteamLibrary\steamapps\common\Stardew Valley</GamePath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="manifest.json" />
+    <None Remove="manifest.json~RF2576deb.TMP" />
+    <None Remove="manifest.json~RF25c1e1d.TMP" />
+    <None Remove="Trances\Effects\ITranceCommand.cs~RF5a73a3.TMP" />
+    <None Remove="Trances\Effects\ITranceCommand.cs~RF90927f.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="manifest.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="assets\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="assets\Buttons.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\TranceBar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\TranceBarOutline.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\TranceDescriptions.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
