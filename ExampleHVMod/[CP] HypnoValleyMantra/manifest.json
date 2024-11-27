@@ -1,0 +1,11 @@
+{
+  "Name": "Hypno Valley - Mantra Command",
+  "Author": "Kryspur",
+  "Version": "1.0.0",
+  "Description": "Adds a hypnotic command for a mantra",
+  "UniqueID": "Kryspur.HypnoValleyMantraCP",
+  "UpdateKeys": [ "Nexus:???" ],
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  }
+}

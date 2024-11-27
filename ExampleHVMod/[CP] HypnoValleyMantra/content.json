@@ -1,0 +1,83 @@
+{
+  "Format": "2.0.0",
+  "Changes": [
+    ///Object Sprites
+    {
+      "Action": "Load",
+      "Target": "Kryspur.HypnoValleyMantra/Objects",
+      "FromFile": "assets/Objects/modObjects.png"
+    },
+
+    //Add Objects
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        //Lesson Books
+        "Kryspur.HypnoValleyMantra_MantraLesson": {
+          "Name": "Kryspur.HypnoValley_MantraLesson",
+          "DisplayName": "Mantra Lesson",
+          "Description": "A simple guide on training mantras with your subject.",
+          "Type": "asdf",
+          "Category": -102,
+          "Price": 1000,
+
+          "Texture": "Kryspur.HypnoValleyMantra/Objects",
+          "SpriteIndex": 0,
+
+          "ExcludeFromRandomSale": true,
+          "ExcludeFromShippingCollection": true,
+          "ContextTags": [
+            "book_item",
+            "book_xp_luck"
+          ],
+
+          "CustomFields": {
+            "Kryspur.HypnoValley_IsLesson": true
+          }
+        }
+      }
+    },
+
+    //Add Triggers
+    {
+      "Action": "EditData",
+      "Target": "Mods/Kryspur.HypnoValley_Triggers",
+      "Entries": {
+
+        "Mantra": {
+          "ID": "Kryspur.HypnoValleyMantra_MantraTrigger",
+          "DisplayName": "Mantra",
+          "Description": "Teach your subject a new mantra to deepen their trances",
+          "RequiredBook": "Kryspur.HypnoValleyMantra_MantraLesson",
+          "Variants": {
+            "DailyMantra": {
+              "ID": "Kryspur.HypnoValleyMantra_MantraDaily",
+              "DisplayName": "Daily Mantra",
+              "Description": "Make your subject's mind completely blank.",
+              "MinimumLevel": "0",
+              "TrustCost": "200",
+              "Action": "Kryspur.HypnoValleyMantra_Action Mantra/DailyMantra"
+            }
+          }
+        }
+      }
+    },
+
+    //Edit Shop
+    {
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "Kryspur.HypnoValley_KrisShop", "Items" ],
+      "Entries": {
+        "Kryspur.HypnoValleyMantra.MantraLessonShop": {
+            "ID": "Kryspur.HypnoValleyMantra_MantraLessonShop",
+            "ItemID": "Kryspur.HypnoValleyMantra_MantraLesson",
+            "Condition": true,
+            "Price": "1000",
+            "AvailableStock": 1
+        }
+      }
+    }
+  ]
+}
